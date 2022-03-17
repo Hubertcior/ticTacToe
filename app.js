@@ -79,7 +79,7 @@ fields.forEach( element => {
         if(table[element.attributes[0].value]===0){
         if(flag && canPlay){
         const img = document.createElement('img');
-        img.setAttribute('src', '../img/x.png');
+        img.setAttribute('src', 'img/x.png');
         element.appendChild(img);
         flag = !flag;
         table[element.attributes[0].value] =1;
@@ -92,7 +92,7 @@ fields.forEach( element => {
         }
         else if(!flag && canPlay){
         const img = document.createElement('img');
-        img.setAttribute('src', '../img/o.png');
+        img.setAttribute('src', 'img/o.png');
         element.appendChild(img);
         flag = !flag;
         table[element.attributes[0].value] =2;
