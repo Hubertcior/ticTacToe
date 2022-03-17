@@ -86,10 +86,10 @@ fields.forEach( element => {
         flag = !flag;
         table[element.attributes[0].value] =1;
         console.log(element.attributes[0].value);
+        checkDraw();
         checkRow();
         checkColumn();
         checkBias();
-        checkDraw();
         document.querySelector('h2').innerHTML= "";
         }
         else if(!flag && canPlay){
@@ -101,10 +101,10 @@ fields.forEach( element => {
         flag = !flag;
         table[element.attributes[0].value] =2;
         console.log(element.attributes[0].value);
+        checkDraw();
         checkRow();
         checkColumn();
         checkBias();
-        checkDraw();
         document.querySelector('h2').innerHTML= "";
         }
     }
