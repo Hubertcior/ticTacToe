@@ -2,15 +2,29 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body{
     display:flex;
     justify-content:center;
     align-items:center;
     height:100vh;
-    flex-direction: column;
+    flex-direction:row;
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(35,35,177,1) 46%, rgba(0,212,255,1) 100%);
 }
-
+#stats{
+    position: absolute; 
+    left: calc(50% + 150px + 20px);   
+    display: flex;
+    flex-direction:column;
+}
+#game{
+    position: absolute;
+    display:flex;
+    flex-direction:column; 
+    align-items:center;
+    width: 300px;
+}
 #gamePlate{
     display: flex;
     flex-direction: row;
@@ -34,4 +48,8 @@ body{
 }
 button{
     margin-top:20px;
+    border-radius: 20px;
+    width:100px;
+    height: 40px;
+    background: linear-gradient(180deg, rgba(14,222,158,1) 0%, rgba(5,152,182,1) 100%);
 }

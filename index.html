@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div id="game">
         <h2></h2>
         <h1></h1>
         <div id="gamePlate">
@@ -24,7 +25,13 @@
             <div data-field="8"  class="square"></div>
         </div>
         <button>Restart</button>
-        
+    </div>
+    <div id="stats">
+        <div><span>Games: </span><span id="games"></span></div>
+        <div><span>O wins: </span><span id="Owins"></span></div>
+        <div><span>X wins: </span><span id="Xwins"></span></div>
+        <div><span>Draws: </span><span id="draws"></span></div>
+    </div>
         <script src="app.js" async defer></script>
     </body>
 </html>

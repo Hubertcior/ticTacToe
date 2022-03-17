@@ -6,53 +6,56 @@ let table = [0,0,0,
                    0,0,0,
                    0,0,0];
 
-const checkRow = () =>{
+let games = 0;
+let oWins= 0;
+let xWins= 0;
+let draws= 0;
+
+const check = () =>{
     if(table[0] === 1 && table[1] === 1 && table[2] === 1 || table[3] === 1 && table[4] === 1 && table[5] === 1 || table[6] === 1 && table[7] === 1 && table[8] === 1){
         canPlay = !canPlay;
         document.querySelector('h1').innerHTML= "X win";
-        console.log("X win");
+        xWins++;
+        games++;
     }
     else if(table[0] === 2 && table[1] === 2 && table[2] === 2 || table[3] === 2 && table[4] === 2 && table[5] === 2 || table[6] === 2 && table[7] === 2 && table[8] === 2){
         document.querySelector('h1').innerHTML= "O win";
         canPlay = !canPlay;
-        console.log("O win");
+        oWins++;
+        games++;
     }
-}
-
-const checkColumn = () =>{
-    if(table[0] === 1 && table[3] === 1 && table[6] === 1 || table[1] === 1 && table[4] === 1 && table[7] === 1 || table[2] === 1 && table[5] === 1 && table[8] === 1){
+    else if(table[0] === 1 && table[3] === 1 && table[6] === 1 || table[1] === 1 && table[4] === 1 && table[7] === 1 || table[2] === 1 && table[5] === 1 && table[8] === 1){
         canPlay = !canPlay;
         document.querySelector('h1').innerHTML= "X win";
-        console.log("X win");
+        xWins++;
+        games++;
     }
     else if(table[0] === 2 && table[3] === 2 && table[6] === 2 || table[1] === 2 && table[4] === 2 && table[7] === 2 || table[2] === 2 && table[5] === 2 && table[8] === 2){
         document.querySelector('h1').innerHTML= "O win";
         canPlay = !canPlay;
-        console.log("O win");
+        oWins++;
+        games++;
     }
-}
-
-const checkBias = () =>{
-    if(table[0] === 1 && table[4] === 1 && table[8] === 1 || table[2] === 1 && table[4] === 1 && table[6] === 1){
+    else if(table[0] === 1 && table[4] === 1 && table[8] === 1 || table[2] === 1 && table[4] === 1 && table[6] === 1){
         canPlay = !canPlay;
         document.querySelector('h1').innerHTML= "X win";
-        console.log("X win");
+        xWins++;
+        games++;
     }
     else if(table[0] === 2 && table[4] === 2 && table[8] === 2 || table[2] === 2 && table[4] === 2 && table[6] === 2){
         document.querySelector('h1').innerHTML= "O win";
         canPlay = !canPlay;
-        console.log("O win");
+        oWins++;
+        games++;
     }
-}
-
-const checkDraw = () =>{
-    if(table[0] != 0 && table[1] != 0 && table[2] != 0 && table[3] != 0 && table[4] != 0 && table[5] != 0 && table[6] != 0 && table[7] != 0 && table[8] != 0){
+    else if(table[0] != 0 && table[1] != 0 && table[2] != 0 && table[3] != 0 && table[4] != 0 && table[5] != 0 && table[6] != 0 && table[7] != 0 && table[8] != 0){
         document.querySelector('h1').innerHTML= "Draw";
         canPlay = !canPlay;
-        console.log("draw");
+       draws++;
+       games++;
     }
-}
 
+}
 const clearingImg = () =>{
     fields.forEach(field =>{
         if(field.childNodes[0] != undefined){
@@ -78,8 +81,18 @@ const restart = () =>{
     clearingImg();
     clearingTable();
     clearingValue();
+    statsUpdate();
 }
 
+const statsUpdate = () =>{
+    document.querySelector('#games').innerHTML = games;
+    document.querySelector('#Owins').innerHTML = oWins;
+    document.querySelector('#Xwins').innerHTML = xWins;
+    document.querySelector('#draws').innerHTML = draws;
+}
+
+
+statsUpdate();
 
 fields.forEach( element => {
     element.addEventListener('click', ()=>{
@@ -92,11 +105,7 @@ fields.forEach( element => {
         element.appendChild(text);
         flag = !flag;
         table[element.attributes[0].value] =1;
-        console.log(element.attributes[0].value);
-        checkDraw();
-        checkRow();
-        checkColumn();
-        checkBias();
+        check();
         document.querySelector('h2').innerHTML= "";
         }
         else if(!flag && canPlay){
@@ -107,11 +116,7 @@ fields.forEach( element => {
         element.appendChild(text);
         flag = !flag;
         table[element.attributes[0].value] =2;
-        console.log(element.attributes[0].value);
-        checkDraw();
-        checkRow();
-        checkColumn();
-        checkBias();
+        check();
         document.querySelector('h2').innerHTML= "";
         }
     }
