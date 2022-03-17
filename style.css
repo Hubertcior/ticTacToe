@@ -22,7 +22,9 @@ body{
     border: 1px solid black;
     width: 100px;
     height: 100px;
-    
+    display: flex;
+    justify-content:center;
+    align-items:center;
 }
 #b4,#b5,#b6,#b7,#b8,#b9{
     border-top:0px;

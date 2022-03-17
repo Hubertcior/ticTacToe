@@ -78,9 +78,11 @@ fields.forEach( element => {
     element.addEventListener('click', ()=>{
         if(table[element.attributes[0].value]===0){
         if(flag && canPlay){
-        const img = document.createElement('img');
-        img.setAttribute('src', 'img/x.png');
-        element.appendChild(img);
+        const text = document.createElement('h1');
+        text.innerHTML = "X";
+        text.style.fontSize = "80px";
+        text.style.color = "red";
+        element.appendChild(text);
         flag = !flag;
         table[element.attributes[0].value] =1;
         console.log(element.attributes[0].value);
@@ -91,9 +93,11 @@ fields.forEach( element => {
         document.querySelector('h2').innerHTML= "";
         }
         else if(!flag && canPlay){
-        const img = document.createElement('img');
-        img.setAttribute('src', 'img/o.png');
-        element.appendChild(img);
+        const text = document.createElement('h1');
+        text.innerHTML = "O"
+        text.style.fontSize = "80px";
+        text.style.color = "green";
+        element.appendChild(text);
         flag = !flag;
         table[element.attributes[0].value] =2;
         console.log(element.attributes[0].value);
