@@ -78,9 +78,9 @@ const clearingValue = () =>{
 }
 
 const restart = () =>{
-    clearingImg();
     clearingTable();
     clearingValue();
+    clearingImg();
     statsUpdate();
 }
 
