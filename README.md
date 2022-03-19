@@ -1,4 +1,4 @@
-Pierwsza aplikacja 
+Pierwsza aplikacja (W sumie to skończona może kiedyś do styli wrócę)
 
 ---------------OPIS---------------
 
