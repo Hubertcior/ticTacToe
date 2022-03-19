@@ -10,4 +10,4 @@ w vanilla JS.
 
 ---------------TO-DO--------------
 
-poprawa logiki 
+ ̶p̶o̶p̶r̶a̶w̶a̶ ̶l̶o̶g̶i̶k̶i
